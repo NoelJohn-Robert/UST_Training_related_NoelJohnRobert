@@ -1,4 +1,4 @@
-# action 4
+# action 4 - function to authenticate user while logging in
 def user_login():
     username_user = input("Please enter user's username: ")
     password_user = input("Please input user's password: ")
@@ -14,7 +14,7 @@ def user_login():
         print("Login failed!! Password incorrect")
         return False
 
-# action 5 +13 
+# action 5 +13 - functin to authenticate admin while logging in
 def admin_login():
     username_admin = input("Please enter admin's username: ")
     password_admin = input("Please input admin's password: ")
@@ -30,14 +30,14 @@ def admin_login():
         print("Login failed!! Password incorrect")
         return False
 
-# action 6
+# action 6 - function to generate a session id, here a hardcoded value is returned
 def generate_session_id():
     return 12345
 
-# action 8
+# action 8 - list to store catalog of items inthe app
 catalog = []
 
-# action 9
+# action 9 - function to display catalog to uses
 def display_catalog():
     print("ID\t\tNAME\t\tCATEGORY\t\tPRICE")
     for product in catalog:
@@ -45,6 +45,7 @@ def display_catalog():
             print(f"{value}", end='\t\t')
         print()
 
+# function to add new products to catalog
 def catalog_add_product():
     product_id = int(input("Enter product ID: "))
     product_name = input("Enter product name: ")
@@ -53,6 +54,7 @@ def catalog_add_product():
     product = {'product_id':product_id, 'product_name':product_name, 'product_category':product_category, 'product_price':product_price}
     catalog.append(product)
 
+# function to update products in the catalog
 def catalog_update_product():
     check_product_id = int(input("Enter ID of product to be updated: "))
     prod_new_name = input("Enter new name: ")
@@ -65,10 +67,11 @@ def catalog_update_product():
             item['product_price'] = prod_new_price
             break
 
+# function to display catalog to uses
 def catalog_view_product():
     display_catalog()
 
-# action 12
+# action 12 - function to perform final checkout process
 def checkout():
     print("Select payment option:\n [1]NetBanking\n [2]PayPal")
     checkout_choice = int(input("plesae enter your choice: "))
@@ -79,9 +82,10 @@ def checkout():
     else:
         print("You have entered an incorrect choice for payment!!")
 
-# action 10
+# action 10 - list storing all items in a user's cart
 cart = []
 
+# function to display cart contents
 def display_cart():
     print("SESSION ID\t\tPRODUCT ID\t\tQUANTITY")
     for item in cart:
@@ -89,17 +93,20 @@ def display_cart():
             print(f"{value}", end='\t\t')
         print()
 
+# function to add new items to cart
 def add_to_cart(sessionid, productid, quantity):
     new_item = {'sessionid':sessionid, 'productid':productid, 'quantity':quantity}
     cart.append(new_item)
     print("A new item has been added\n")
 
+# function to remove items from cart
 def delete_from_cart(sessionid, productid):
     for item in cart:
         if item['sessionid']==sessionid and item['productid']==productid: 
             cart.remove(item)
             print("An item has ben successfully removed form your cart!")
             print()
+
 
 def admin_func(admin_session_id):
     print("Options:\n [1]Add product to catalog\n [2]Update existing product info\n [3]View catalog\n [4]Exit loop")
