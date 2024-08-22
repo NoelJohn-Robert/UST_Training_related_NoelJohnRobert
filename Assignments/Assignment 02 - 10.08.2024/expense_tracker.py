@@ -18,9 +18,11 @@ class Expense:
 # empty list to store expenses
 expenses = []
 
+# function to add new expenses
 def add_expense(expense):
     expenses.append(expense)
 
+# function to update existing expenses
 def update_expense(expense_id, new_expense):
     for item in expenses:
         if item.expense_id == expense_id:
@@ -29,6 +31,7 @@ def update_expense(expense_id, new_expense):
             item.description = new_expense.description
             item.amount = new_expense.amount
 
+# function to delete some existing expense
 def delete_expense(expense_id):
     found = False
     for item in expenses:
@@ -40,6 +43,7 @@ def delete_expense(expense_id):
     else:
         print("Expense deleted")
 
+# function to display all expenses
 def display_expenses():
     print("ID\tDATE\tCATEGORY\tDESCRIPTION\tAMOUNT")
     for item in expenses:
@@ -47,9 +51,10 @@ def display_expenses():
 
 
 
-# 4.
+# 4. - dictionary storing username and password for authentication
 users = {'user1':'password1', 'user2':'password2'}
 
+# function to perform authentication
 def authenticate_user(username, password):
     if username not in users:
         print("User not found")
@@ -64,7 +69,7 @@ def authenticate_user(username, password):
 
 
 
-# 5.
+# 5. function to split expenses based on category
 def categorize_expenses():
     categories = {}
     for expense in expenses:
@@ -75,6 +80,7 @@ def categorize_expenses():
             categories[category_temp] = float(expense.amount)
     return categories
 
+
 def summarize_expenses():
     total = 0
     for expense in expenses:
@@ -83,11 +89,12 @@ def summarize_expenses():
 
 
 
-# 6.
+# 6. functino to find total expense
 def calculate_total_expenses():
     total_sum = summarize_expenses()
     return total_sum
 
+# function to create a summary
 def generate_summary_report():
     category_wise_expense = categorize_expenses()
     print("Category wise expense:")
@@ -111,7 +118,7 @@ def generate_expense_id():
             return new_unique_id
 
 
-# 7
+# 7 - function that creates interface for user to interact with
 def cli():
     print("Options:")
     print("1. Add new expense")
@@ -155,7 +162,7 @@ def cli():
 
 
 
-# main code, entry point
+# main code, entry point into program
 username_input = input("Enter username: ")
 password_input = input("Enter password: ")
 if authenticate_user(username_input, password_input):
