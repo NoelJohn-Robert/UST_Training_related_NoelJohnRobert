@@ -1,0 +1,162 @@
+-- aggregating scores of restaurant into a single value, showing sum of all scores 
+db.restaurant.aggregate([
+  {$unwind:'$grades'},
+  {'$group': {_id:null, totalScore: {$sum: '$grades.score'}}}
+])
+
+
+-- finding total score for each restaurant:, we grouped by '_id'
+db.restaurant.aggregate([
+  {$unwind:'$grades'},
+  {'$group': {_id:'$_id', totalScore: {$sum: '$grades.score'}}}
+])
+
+
+-- finding restaurants with score >= 90
+db.restaurant.find({'grades.score': {$gte: 90}})
+
+
+-- we want to add scores and display those with total score over 90:
+db.restaurant.aggregate([
+  {$unwind:'$grades'},
+  {'$group': {_id:'$restaurant_id', totalScore: {$sum: '$grades.score'},
+	name:{$first:'$name'}, cuisine:{$first:'cuisine'}, address:{$first:'address'}}},
+  {$match:{totalScore:{$gte:90}}}
+])
+
+
+-- score between 80 and 100:
+db.restaurant.find({'grades.score': {$gt: 80, $lt:100}}).pretty()
+
+
+-- implementing OR
+db.restaurant.find({$or:[{'grades.score': {$gt: 80, $lt:100}},
+                         {'restaurant_id':{$gte:'40000000'}}
+]})
+
+
+-- implementing AND:
+db.restaurant.find({$and:[{'grades.score': {$gte:30}},
+                         {'restaurant_id':{$gte:'40000000'}}
+]})
+
+
+-- implementing NOT
+db.restaurant.find({'cuisine': {$ne: "Bakery"}})
+
+
+
+
+-- Q: restaurants that do not prepare American cuisine and score > 70
+db.restaurant.find({$and: [{'cuisine':{$ne: 'American '}}, {'grades.score':{$gte:70}}]})
+
+
+-- Q: query to arrange names of cuisines in ascending order, and borough arranged in descending order
+db.restaurant.find().sort({cuisine:1, borough:-1}).pretty()
+
+
+-- Q: show restaurant_id, name, borough and cuisines for restaurnats that prepare
+dish except American and Chinese or restaurant's name begine with 'Bill'
+db.restaurant.find({
+$or:[
+  {cuisine: {$nin:['American ', 'Chinese']}},
+  {name: {$regex:/^Bil/}}
+]
+}, {
+	_id:0, restaurant_id:1, name:1, borough:1, cuisine:1
+})
+
+
+-- Q: show restaurant_id, name, borough, cuisines, and max score for restaurnats 
+that serve "Indian" cuisine
+db.restaurant.find({cuisine: 'Indian'}, {restaurant_id:1, name:1, borough:1, cuisine:1, maxscore:{$max:'$grades.score'}})
+
+
+
+-- Q: find restaurants that have 'bi' as last last 3 letters for its name
+db.restaurant.find({name:{$regex:/bi$/}}, {_id:0, restaurant_id:1, name:1, borough:1, cuisine:1, "grades.score":1})
+
+
+-- Q: find restaurants thet have 'li'  anywhere in their name - 
+db.restaurant.find({name:{$regex:/il/}}, {_id:0, restaurant_id:1, name:1, borough:1, cuisine:1})
+
+
+-- Q: show restaurant id, name, grades for restaurants
+which return 0 as remainder after dividing score by 7 - 
+db.restaurant.find({'grades.score': {$mod:[7,0]}}, {_id:0, restaurant_id:1, name:1, borough:1, cuisine:1, 'grades.score':1})
+
+
+-- Q: show record count having street and not street in address:
+db.restaurant.countDocuments({'address.street': {$exists:true}})
+db.restaurant.countDocuments({'address.street': {$exists:false}})
+
+
+-- Q: query to find restaurants not preparing 'American' cuisine and has score more than 70 and longitude<65.754168 
+db.restaurant.find({$and: [{'cuisine':{$ne: 'American '}}, 
+			   {'grades.score':{$gte:70}}, 
+			   {'address.coord.1':{$lt:65.754168}}
+			  ]}, {restaurant_id:1, name:1, cuisine:1, address:1, "grades.score":1})
+
+
+
+
+20/08/2024:
+-- Q: find all restaurants in brooklyn with grade 'B' or lower:
+db.restaurant.find({$and: [{'borough':{$eq: 'Brooklyn'}}, {'grades.grade': {$nin:['A']}}, {'grades':{$ne:[]}}]})
+
+
+-- Q: find restaurant with average score below 10:
+db.restaurant.aggregate([
+  {$unwind:'$grades'},
+  {'$group': {_id:'$restaurant_id', averageScore: {$avg: '$grades.score'},
+	name:{$first:'$name'}, cuisine:{$first:'cuisine'}, address:{$first:'address'}}},
+  {$match:{averageScore:{$lte:10}}}
+])
+
+
+-- Q:find all restaurants in Brooklyn borough serving American cuisine online
+and have score less than 10 on any inspection
+db.restaurant.find({$and: [{'borough':{$eq: 'Brooklyn'}}, {'cuisine': {$eq:'American '}}, {'grades.score': {$lte:10}}]})
+-- alternate: db.restaurant.find({$and: [{'borough':{$eq: 'Brooklyn'}}, {'cuisine': {$eq:'American '}}, {'grades': {$elemMatch:{score: {$lt:10}}}}]})
+
+
+-- Q: retreive all restaurants having grade 'A' and sort by most recent grade date in descending order
+db.restaurant.find({'grades.grade':{$eq:'A'}}).sort({'grades.date':-1})
+
+
+-- Q: set limit of 10 on response of previous answer
+db.restaurant.find({'grades.grade':{$eq:'A'}}, {name:1, 'grades.$':1}).sort({'grades.date':-1}).limit(10)
+
+
+-- Q: for each borough, calculate and find aggregate methods -> average, median, minimum, maximum grade score
+ of restaurant serving chinese cuisine
+-- below code returns array of scores for restaurants with Chinese cuisine, grouped by borough
+db.restaurant.aggregate([
+  {$match: {cuisine: "Chinese"}},
+  {$unwind: '$grades'},
+  {$group: {_id:'$borough', scores:{$push:'$grades.score'}}}
+])
+-- below code is proper answer
+db.restaurant.aggregate([
+  {$match: {cuisine: "Chinese"}},
+  {$unwind: '$grades'},
+  {$group: {_id:'$borough', scores:{$push:'$grades.score'}}},
+  {$project: {_id:0, borough:'$_id',
+		avgScore: {$avg:"$scores"},
+		minScore: {$min:'$scores'},
+		maxScore: {$max:'$scores'},
+		medianScore: {$median: {input:'$scores', method:'approximate'}}
+	}}
+])
+
+
+INDEXING:
+-- Q: create a compound index on borough and cuisine, 
+then query restaurants in "Queens" serving "Jewish/Kosher":
+db.restaurant.createIndex({borough:1, cuisine:1})
+db.restaurant.find({borough:"Queens", cuisine:"Jewish/Kosher"})
+
+
+-- optimization using partial index for restaurants
+db.restaurant.createIndex({'grades.score': 1}, {partialFilterExpression: {'grades.score': {$gt:20}}})
+db.restaurant.find({'grades.score': {$gt:20}})
