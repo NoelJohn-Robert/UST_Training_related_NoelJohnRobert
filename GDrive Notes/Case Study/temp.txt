@@ -1,0 +1,51 @@
+from geopy.geocoders import Nominatim
+import pandas as pd
+import numpy as np
+import time
+
+locations = pd.DataFrame({"Name": zomato_df['location'].unique()})
+locations['Name'] = locations['Name'].apply(lambda x: "Bangalore " + str(x))
+geolocator = Nominatim(user_agent="app")
+
+def geocode_with_retry(location, retries=3, delay=5):
+    for _ in range(retries):
+        try:
+            result = geolocator.geocode(location)
+            if result:
+                return (result.latitude, result.longitude)
+        except (TimeoutError, Exception) as e:
+            print(f"Error: {e}. Retrying...")
+            time.sleep(delay)
+    return np.nan
+
+lat_long = []
+for location in locations['Name']:
+    geo = geocode_with_retry(location)
+    lat_long.append(geo)
+
+
+
+
+
+locations['geo_loc'] = lat_lon
+locations.to_csv('locations.csv', index = False)
+locations["Name"] = locations['Name'].apply(lambda x : x.replace("Bangalore","")[1:])
+locations.head()
+
+rest_locations = pd.DataFrame(zomato_df['location'].value_counts().reset_index())
+rest_locations.columns = ['Name','count']
+rest_locations = rest_locations.merge(locations, on = 'Name', how='left').dropna()
+rest_locations'
+
+import folium
+from folium.plugins import HeatMap
+
+base_map = folium.Map(location=[12.97, 77.59], control_scale=True, zoom_start=12)
+
+lat,lon=zip(*np.array(rest_locations['geo_loc']))
+rest_locations['lat']=lat
+rest_locations['lon']=lon
+basemap=generateBaseMap()
+HeatMap(rest_locations[['lat','lon','count']].values.tolist(), zoom=20, radius=15).add_to(basemap)
+
+basemap
