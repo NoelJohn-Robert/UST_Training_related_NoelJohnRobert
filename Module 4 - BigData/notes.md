@@ -1519,9 +1519,15 @@ Cost of UPDATE  increases based on percent of records to be cleaned. Cost of REF
 
 - Connection Managers
 
-email - noelroberttemp@outlook.com
+- 
 
-password - [`n03lr0b3rt`]
+- 
+  
+  
+  
+  noelroberttemp@outlook.com
+
+word - [`n03lr0b3rt`]
 
 In terms of SSIS, what is difference between Full Cache, Partial Cache, and No Cache [in the lookup block]
 
