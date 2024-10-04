@@ -1,0 +1,43 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="9/10/2024 3:32:04 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="05FC03D7092157B"
+  DTS:CreatorName="05FC03D7092157B\Administrator"
+  DTS:DTSID="{05AA4549-4B21-474B-8EFB-3D8C16E0B1A2}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5556.0"
+  DTS:LocaleID="16393"
+  DTS:ObjectName="Pivot Transformations"
+  DTS:PackageType="5"
+  DTS:VersionBuild="6"
+  DTS:VersionGUID="{42396B9E-5691-4760-AF55-A05F87B4BB3E}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables />
+  <DTS:Executables />
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <AnnotationLayout
+          Text="Pivot converts columns into rows&#xA;&#xA;A PivotTable is a powerful tool to calculate, summarize, &#xA;and analyze data that lets you see comparisons, pattern,&#xD;&#xA;and trends in your data."
+          ParentId="Package"
+          FontInfo="{assembly:Null}"
+          Size="326,104"
+          Id="3592f117-adf0-4253-9db2-d08fbef29fcb"
+          TopLeft="20,30" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
