@@ -1,0 +1,24 @@
+Start Azure CLI
+Install-Module AzTable
+
+$storageName = "azurestoragedb"
+$storageAccountKey = ""
+
+# Create the storage account context
+$context = New-AzStorageContext -StorageAccountName $storageName -StorageAccountKey $storageAccountKey
+
+# Define the table name
+$tableName = "demotable"
+
+# Create the new table
+New-AzStorageTable -Name $tableName -Context $context
+
+$cloudTable = (Get-AzStorageTable -Name $tableName -Context $context).CloudTable
+$partitionKey1 = "partition1"
+$partitionKey2 = "partition2"
+
+Add-AzTableRow -table $cloudTable -partitionKey $partitionKey1 -rowKey ("CA") -property  @{"username"="Uday";"userid":1}
+
+Add-AzTableRow -table $cloudTable -partitionKey $partitionKey2 -rowKey ("LA") -property  @{"username"="Elias";"userid":4}
+
+Get-AzTableRow -table $cloudTable | ft

@@ -1,0 +1,33 @@
+-- Show all documents from one container
+select * from c
+
+-- c is an alias for the document within a container
+-- Filter Documents Based on a Field
+SELECT * FROM c where c.balance > 7000
+
+-- Limit - Show Top 10 records 
+select Top 10 * from c
+
+-- Aggregate Operations
+select value count(1) from c
+
+-- Count with Alias
+select count(1) as count_doc from c
+
+-- Sum 
+select value sum(c.balance) from c
+
+-- Avg
+select avg(c.balance) as avg_balance from c
+
+-- Group By
+select c.job, count(1) as empcount, avg(c.balance) from c group by c.job
+
+-- Order By
+select * from c order by c.balance DESC
+
+-- Distinct 
+select distinct c.job from c
+
+
+
