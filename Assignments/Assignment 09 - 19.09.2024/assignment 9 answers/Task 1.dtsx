@@ -1,0 +1,2713 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="9/24/2024 6:24:24 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="05FC03D7092157B"
+  DTS:CreatorName="05FC03D7092157B\Administrator"
+  DTS:DTSID="{A58E718C-0CAB-477B-8E23-310834E9292B}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5556.0"
+  DTS:LocaleID="16393"
+  DTS:ObjectName="Task 1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="28"
+  DTS:VersionGUID="{A5A12B7D-3A24-4DCB-A2D5-87EE2FC05488}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[05fc03d7092157b.SSIS]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{5FCC2B6B-84A6-45F5-B2C2-5142751D6F76}"
+      DTS:ObjectName="05fc03d7092157b.SSIS">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=05fc03d7092157b;Initial Catalog=SSIS;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Application Name=SSIS-Task 1-{5FCC2B6B-84A6-45F5-B2C2-5142751D6F76}05fc03d7092157b.SSIS;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Extract From CSV]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{E02E87C6-8E5F-45AD-A87B-5CE06FB4D730}"
+      DTS:ObjectName="Extract From CSV">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="16393"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x0022_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="D:\UST_Training_related_NoelJohnRobert-main\Assignments\Assignment 09 - 19.09.2024\sales_data_sample.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="2"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ORDERNUMBER"
+              DTS:DTSID="{C9B67794-86FB-440B-A75D-5CAE19E84FAF}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="16"
+              DTS:TextQualified="True"
+              DTS:ObjectName="QUANTITYORDERED"
+              DTS:DTSID="{34B166DC-C0DA-4E47-9EAD-539390CC3CF4}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="4"
+              DTS:TextQualified="True"
+              DTS:ObjectName="PRICEEACH"
+              DTS:DTSID="{B3B0796F-EB71-4E00-AAE1-1D385FACDB5F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="16"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ORDERLINENUMBER"
+              DTS:DTSID="{4CD02A06-6F9E-4BB0-8303-948E730D62C2}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="4"
+              DTS:TextQualified="True"
+              DTS:ObjectName="SALES"
+              DTS:DTSID="{41A320CD-2244-4A70-8B57-2F401E0DA001}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="7"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ORDERDATE"
+              DTS:DTSID="{6AAD857F-60E1-4BBB-AFE4-45030FA0D1B1}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="10"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="STATUS"
+              DTS:DTSID="{C6469D19-EF2A-4870-AF95-C77F9378E7CE}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="16"
+              DTS:TextQualified="True"
+              DTS:ObjectName="QTR_ID"
+              DTS:DTSID="{F16278DC-D4ED-4EF1-93BE-D500EE51C892}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="16"
+              DTS:TextQualified="True"
+              DTS:ObjectName="MONTH_ID"
+              DTS:DTSID="{94280555-6FDE-4D51-B72A-E7D25EB83931}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="2"
+              DTS:TextQualified="True"
+              DTS:ObjectName="YEAR_ID"
+              DTS:DTSID="{84277040-643D-4B28-B844-EEFBA497F38C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="64"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="PRODUCTLINE"
+              DTS:DTSID="{31271FE0-46FC-43AA-A5ED-7AE99F5E3B65}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="2"
+              DTS:TextQualified="True"
+              DTS:ObjectName="MSRP"
+              DTS:DTSID="{4CF72B6E-9896-483E-88CF-B2C97471EBBA}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="16"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="PRODUCTCODE"
+              DTS:DTSID="{764ED154-7063-47C4-8F7E-C63A0E4A6C42}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="128"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CUSTOMERNAME"
+              DTS:DTSID="{8FDEAEF2-5E9D-402F-AEE9-74F79B6A9AC7}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="17"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="PHONE"
+              DTS:DTSID="{276E6026-4A7E-42FE-94D6-8358B5E59061}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="512"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ADDRESSLINE1"
+              DTS:DTSID="{1FD4446D-50BB-4847-9EBE-E8CCF2B9CE3F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="512"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ADDRESSLINE2"
+              DTS:DTSID="{318D285F-C303-45A0-9CC4-DAE90D00DCD9}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="32"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CITY"
+              DTS:DTSID="{365EC0FD-1C09-40BF-A324-B3FBDB7DACDD}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="32"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="STATE"
+              DTS:DTSID="{EC6B1545-37D8-419C-A944-911A85A21A89}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="9"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="POSTALCODE"
+              DTS:DTSID="{744CCF67-C2A2-4644-AB7D-E6DB9C1F6147}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="32"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="COUNTRY"
+              DTS:DTSID="{3C4525DD-6C25-4FB4-BB2F-CF1652A86CFD}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="64"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="TERRITORY"
+              DTS:DTSID="{A6A8B94E-D2C3-48A7-B1F7-BE18381CEB69}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="64"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CONTACTLASTNAME"
+              DTS:DTSID="{956CEBD8-830F-42F7-98C0-B330AF348DEE}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="64"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CONTACTFIRSTNAME"
+              DTS:DTSID="{25D1F414-5BEB-488B-8BC7-9E6B0561D41C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000A_"
+              DTS:MaximumWidth="6"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="DEALSIZE"
+              DTS:DTSID="{4C79B096-CA0B-4245-A1D7-B6CCEF9FA25A}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Move from CSV to OLEDB table"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{6FDFCA79-CDDB-44EA-956A-20AD770AEE54}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Move from CSV to OLEDB table"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Move from CSV to OLEDB table\Flat File Source"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="16393"
+              name="Flat File Source"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Move from CSV to OLEDB table\Flat File Source.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Extract From CSV]"
+                  connectionManagerRefId="Package.ConnectionManagers[Extract From CSV]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Move from CSV to OLEDB table\Flat File Source.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Move from CSV to OLEDB table\Flat File Source.Outputs[Flat File Source Output].Columns[ORDERNUMBER]"
+                      dataType="i2"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Move from CSV to OLEDB table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ORDERNUMBER]"
+                      lineageId="Package\Move from CSV to OLEDB table\Flat File Source.Outputs[Flat File Source Output].Columns[ORDERNUMBER]"
+                      name="ORDERNUMBER"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Move from CSV to OLEDB table\Flat File Source.Outputs[Flat File Source Output].Columns[QUANTITYORDERED]"
+                      dataType="i1"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Move from CSV to OLEDB table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[QUANTITYORDERED]"
+                      lineageId="Package\Move from CSV to OLEDB table\Flat File Source.Outputs[Flat File Source Output].Columns[QUANTITYORDERED]"
+                      name="QUANTITYORDERED"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Move from CSV to OLEDB table\Flat File Source.Outputs[Flat File Source Output].Columns[PRICEEACH]"
+                      dataType="r4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Move from CSV to OLEDB table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[PRICEEACH]"
+                      lineageId="Package\Move from CSV to OLEDB table\Flat File Source.Outputs[Flat File Source Output].Columns[PRICEEACH]"
+                      name="PRICEEACH"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Move from CSV to OLEDB table\Flat File Source.Outputs[Flat File Source Output].Columns[ORDERLINENUMBER]"
+                      dataType="i1"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Move from CSV to OLEDB table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ORDERLINENUMBER]"
+                      lineageId="Package\Move from CSV to OLEDB table\Flat File Source.Outputs[Flat File Source Output].Columns[ORDERLINENUMBER]"
+                      name="ORDERLINENUMBER"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Move from CSV to OLEDB table\Flat File Source.Outputs[Flat File Source Output].Columns[SALES]"
+                      dataType="r4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Move from CSV to OLEDB table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[SALES]"
+                      lineageId="Package\Move from CSV to OLEDB table\Flat File Source.Outputs[Flat File Source Output].Columns[SALES]"
+                      name="SALES"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Move from CSV to OLEDB table\Flat File Source.Outputs[Flat File Source Output].Columns[ORDERDATE]"
+                      dataType="date"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Move from CSV to OLEDB table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ORDERDATE]"
+                      lineageId="Package\Move from CSV to OLEDB table\Flat File Source.Outputs[Flat File Source Output].Columns[ORDERDATE]"
+                      name="ORDERDATE"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Move from CSV to OLEDB table\Flat File Source.Outputs[Flat File Source Output].Columns[STATUS]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Move from CSV to OLEDB table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[STATUS]"
+                      length="10"
+                      lineageId="Package\Move from CSV to OLEDB table\Flat File Source.Outputs[Flat File Source Output].Columns[STATUS]"
+                      name="STATUS"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Move from CSV to OLEDB table\Flat File Source.Outputs[Flat File Source Output].Columns[QTR_ID]"
+                      dataType="i1"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Move from CSV to OLEDB table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[QTR_ID]"
+                      lineageId="Package\Move from CSV to OLEDB table\Flat File Source.Outputs[Flat File Source Output].Columns[QTR_ID]"
+                      name="QTR_ID"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Move from CSV to OLEDB table\Flat File Source.Outputs[Flat File Source Output].Columns[MONTH_ID]"
+                      dataType="i1"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Move from CSV to OLEDB table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[MONTH_ID]"
+                      lineageId="Package\Move from CSV to OLEDB table\Flat File Source.Outputs[Flat File Source Output].Columns[MONTH_ID]"
+                      name="MONTH_ID"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Move from CSV to OLEDB table\Flat File Source.Outputs[Flat File Source Output].Columns[YEAR_ID]"
+                      dataType="i2"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Move from CSV to OLEDB table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[YEAR_ID]"
+                      lineageId="Package\Move from CSV to OLEDB table\Flat File Source.Outputs[Flat File Source Output].Columns[YEAR_ID]"
+                      name="YEAR_ID"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Move from CSV to OLEDB table\Flat File Source.Outputs[Flat File Source Output].Columns[PRODUCTLINE]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Move from CSV to OLEDB table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[PRODUCTLINE]"
+                      length="64"
+                      lineageId="Package\Move from CSV to OLEDB table\Flat File Source.Outputs[Flat File Source Output].Columns[PRODUCTLINE]"
+                      name="PRODUCTLINE"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Move from CSV to OLEDB table\Flat File Source.Outputs[Flat File Source Output].Columns[MSRP]"
+                      dataType="i2"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Move from CSV to OLEDB table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[MSRP]"
+                      lineageId="Package\Move from CSV to OLEDB table\Flat File Source.Outputs[Flat File Source Output].Columns[MSRP]"
+                      name="MSRP"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Move from CSV to OLEDB table\Flat File Source.Outputs[Flat File Source Output].Columns[PRODUCTCODE]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Move from CSV to OLEDB table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[PRODUCTCODE]"
+                      length="16"
+                      lineageId="Package\Move from CSV to OLEDB table\Flat File Source.Outputs[Flat File Source Output].Columns[PRODUCTCODE]"
+                      name="PRODUCTCODE"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Move from CSV to OLEDB table\Flat File Source.Outputs[Flat File Source Output].Columns[CUSTOMERNAME]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Move from CSV to OLEDB table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CUSTOMERNAME]"
+                      length="128"
+                      lineageId="Package\Move from CSV to OLEDB table\Flat File Source.Outputs[Flat File Source Output].Columns[CUSTOMERNAME]"
+                      name="CUSTOMERNAME"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Move from CSV to OLEDB table\Flat File Source.Outputs[Flat File Source Output].Columns[PHONE]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Move from CSV to OLEDB table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[PHONE]"
+                      length="17"
+                      lineageId="Package\Move from CSV to OLEDB table\Flat File Source.Outputs[Flat File Source Output].Columns[PHONE]"
+                      name="PHONE"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Move from CSV to OLEDB table\Flat File Source.Outputs[Flat File Source Output].Columns[ADDRESSLINE1]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Move from CSV to OLEDB table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ADDRESSLINE1]"
+                      length="512"
+                      lineageId="Package\Move from CSV to OLEDB table\Flat File Source.Outputs[Flat File Source Output].Columns[ADDRESSLINE1]"
+                      name="ADDRESSLINE1"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Move from CSV to OLEDB table\Flat File Source.Outputs[Flat File Source Output].Columns[ADDRESSLINE2]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Move from CSV to OLEDB table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ADDRESSLINE2]"
+                      length="512"
+                      lineageId="Package\Move from CSV to OLEDB table\Flat File Source.Outputs[Flat File Source Output].Columns[ADDRESSLINE2]"
+                      name="ADDRESSLINE2"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Move from CSV to OLEDB table\Flat File Source.Outputs[Flat File Source Output].Columns[CITY]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Move from CSV to OLEDB table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CITY]"
+                      length="32"
+                      lineageId="Package\Move from CSV to OLEDB table\Flat File Source.Outputs[Flat File Source Output].Columns[CITY]"
+                      name="CITY"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Move from CSV to OLEDB table\Flat File Source.Outputs[Flat File Source Output].Columns[STATE]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Move from CSV to OLEDB table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[STATE]"
+                      length="32"
+                      lineageId="Package\Move from CSV to OLEDB table\Flat File Source.Outputs[Flat File Source Output].Columns[STATE]"
+                      name="STATE"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Move from CSV to OLEDB table\Flat File Source.Outputs[Flat File Source Output].Columns[POSTALCODE]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Move from CSV to OLEDB table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[POSTALCODE]"
+                      length="9"
+                      lineageId="Package\Move from CSV to OLEDB table\Flat File Source.Outputs[Flat File Source Output].Columns[POSTALCODE]"
+                      name="POSTALCODE"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Move from CSV to OLEDB table\Flat File Source.Outputs[Flat File Source Output].Columns[COUNTRY]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Move from CSV to OLEDB table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[COUNTRY]"
+                      length="32"
+                      lineageId="Package\Move from CSV to OLEDB table\Flat File Source.Outputs[Flat File Source Output].Columns[COUNTRY]"
+                      name="COUNTRY"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Move from CSV to OLEDB table\Flat File Source.Outputs[Flat File Source Output].Columns[TERRITORY]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Move from CSV to OLEDB table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[TERRITORY]"
+                      length="64"
+                      lineageId="Package\Move from CSV to OLEDB table\Flat File Source.Outputs[Flat File Source Output].Columns[TERRITORY]"
+                      name="TERRITORY"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Move from CSV to OLEDB table\Flat File Source.Outputs[Flat File Source Output].Columns[CONTACTLASTNAME]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Move from CSV to OLEDB table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CONTACTLASTNAME]"
+                      length="64"
+                      lineageId="Package\Move from CSV to OLEDB table\Flat File Source.Outputs[Flat File Source Output].Columns[CONTACTLASTNAME]"
+                      name="CONTACTLASTNAME"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Move from CSV to OLEDB table\Flat File Source.Outputs[Flat File Source Output].Columns[CONTACTFIRSTNAME]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Move from CSV to OLEDB table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CONTACTFIRSTNAME]"
+                      length="64"
+                      lineageId="Package\Move from CSV to OLEDB table\Flat File Source.Outputs[Flat File Source Output].Columns[CONTACTFIRSTNAME]"
+                      name="CONTACTFIRSTNAME"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Move from CSV to OLEDB table\Flat File Source.Outputs[Flat File Source Output].Columns[DEALSIZE]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Move from CSV to OLEDB table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[DEALSIZE]"
+                      length="6"
+                      lineageId="Package\Move from CSV to OLEDB table\Flat File Source.Outputs[Flat File Source Output].Columns[DEALSIZE]"
+                      name="DEALSIZE"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Move from CSV to OLEDB table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ORDERNUMBER]"
+                      dataType="i2"
+                      name="ORDERNUMBER" />
+                    <externalMetadataColumn
+                      refId="Package\Move from CSV to OLEDB table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[QUANTITYORDERED]"
+                      dataType="i1"
+                      name="QUANTITYORDERED" />
+                    <externalMetadataColumn
+                      refId="Package\Move from CSV to OLEDB table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[PRICEEACH]"
+                      dataType="r4"
+                      name="PRICEEACH" />
+                    <externalMetadataColumn
+                      refId="Package\Move from CSV to OLEDB table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ORDERLINENUMBER]"
+                      dataType="i1"
+                      name="ORDERLINENUMBER" />
+                    <externalMetadataColumn
+                      refId="Package\Move from CSV to OLEDB table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[SALES]"
+                      dataType="r4"
+                      name="SALES" />
+                    <externalMetadataColumn
+                      refId="Package\Move from CSV to OLEDB table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ORDERDATE]"
+                      dataType="date"
+                      name="ORDERDATE" />
+                    <externalMetadataColumn
+                      refId="Package\Move from CSV to OLEDB table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[STATUS]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="STATUS" />
+                    <externalMetadataColumn
+                      refId="Package\Move from CSV to OLEDB table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[QTR_ID]"
+                      dataType="i1"
+                      name="QTR_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Move from CSV to OLEDB table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[MONTH_ID]"
+                      dataType="i1"
+                      name="MONTH_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Move from CSV to OLEDB table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[YEAR_ID]"
+                      dataType="i2"
+                      name="YEAR_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Move from CSV to OLEDB table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[PRODUCTLINE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="64"
+                      name="PRODUCTLINE" />
+                    <externalMetadataColumn
+                      refId="Package\Move from CSV to OLEDB table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[MSRP]"
+                      dataType="i2"
+                      name="MSRP" />
+                    <externalMetadataColumn
+                      refId="Package\Move from CSV to OLEDB table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[PRODUCTCODE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="16"
+                      name="PRODUCTCODE" />
+                    <externalMetadataColumn
+                      refId="Package\Move from CSV to OLEDB table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CUSTOMERNAME]"
+                      codePage="1252"
+                      dataType="str"
+                      length="128"
+                      name="CUSTOMERNAME" />
+                    <externalMetadataColumn
+                      refId="Package\Move from CSV to OLEDB table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[PHONE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="17"
+                      name="PHONE" />
+                    <externalMetadataColumn
+                      refId="Package\Move from CSV to OLEDB table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ADDRESSLINE1]"
+                      codePage="1252"
+                      dataType="str"
+                      length="512"
+                      name="ADDRESSLINE1" />
+                    <externalMetadataColumn
+                      refId="Package\Move from CSV to OLEDB table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ADDRESSLINE2]"
+                      codePage="1252"
+                      dataType="str"
+                      length="512"
+                      name="ADDRESSLINE2" />
+                    <externalMetadataColumn
+                      refId="Package\Move from CSV to OLEDB table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CITY]"
+                      codePage="1252"
+                      dataType="str"
+                      length="32"
+                      name="CITY" />
+                    <externalMetadataColumn
+                      refId="Package\Move from CSV to OLEDB table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[STATE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="32"
+                      name="STATE" />
+                    <externalMetadataColumn
+                      refId="Package\Move from CSV to OLEDB table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[POSTALCODE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="9"
+                      name="POSTALCODE" />
+                    <externalMetadataColumn
+                      refId="Package\Move from CSV to OLEDB table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[COUNTRY]"
+                      codePage="1252"
+                      dataType="str"
+                      length="32"
+                      name="COUNTRY" />
+                    <externalMetadataColumn
+                      refId="Package\Move from CSV to OLEDB table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[TERRITORY]"
+                      codePage="1252"
+                      dataType="str"
+                      length="64"
+                      name="TERRITORY" />
+                    <externalMetadataColumn
+                      refId="Package\Move from CSV to OLEDB table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CONTACTLASTNAME]"
+                      codePage="1252"
+                      dataType="str"
+                      length="64"
+                      name="CONTACTLASTNAME" />
+                    <externalMetadataColumn
+                      refId="Package\Move from CSV to OLEDB table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CONTACTFIRSTNAME]"
+                      codePage="1252"
+                      dataType="str"
+                      length="64"
+                      name="CONTACTFIRSTNAME" />
+                    <externalMetadataColumn
+                      refId="Package\Move from CSV to OLEDB table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[DEALSIZE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="6"
+                      name="DEALSIZE" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Move from CSV to OLEDB table\Flat File Source.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Move from CSV to OLEDB table\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="1252"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\Move from CSV to OLEDB table\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\Move from CSV to OLEDB table\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Move from CSV to OLEDB table\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Move from CSV to OLEDB table\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Move from CSV to OLEDB table\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Move from CSV to OLEDB table\OLE DB Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[SalesData]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Move from CSV to OLEDB table\OLE DB Destination.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[05fc03d7092157b.SSIS]"
+                  connectionManagerRefId="Package.ConnectionManagers[05fc03d7092157b.SSIS]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Move from CSV to OLEDB table\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Move from CSV to OLEDB table\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ORDERNUMBER]"
+                      cachedDataType="i2"
+                      cachedName="ORDERNUMBER"
+                      externalMetadataColumnId="Package\Move from CSV to OLEDB table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ORDERNUMBER]"
+                      lineageId="Package\Move from CSV to OLEDB table\Flat File Source.Outputs[Flat File Source Output].Columns[ORDERNUMBER]" />
+                    <inputColumn
+                      refId="Package\Move from CSV to OLEDB table\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[QUANTITYORDERED]"
+                      cachedDataType="i1"
+                      cachedName="QUANTITYORDERED"
+                      externalMetadataColumnId="Package\Move from CSV to OLEDB table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[QUANTITYORDERED]"
+                      lineageId="Package\Move from CSV to OLEDB table\Flat File Source.Outputs[Flat File Source Output].Columns[QUANTITYORDERED]" />
+                    <inputColumn
+                      refId="Package\Move from CSV to OLEDB table\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[PRICEEACH]"
+                      cachedDataType="r4"
+                      cachedName="PRICEEACH"
+                      externalMetadataColumnId="Package\Move from CSV to OLEDB table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PRICEEACH]"
+                      lineageId="Package\Move from CSV to OLEDB table\Flat File Source.Outputs[Flat File Source Output].Columns[PRICEEACH]" />
+                    <inputColumn
+                      refId="Package\Move from CSV to OLEDB table\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ORDERLINENUMBER]"
+                      cachedDataType="i1"
+                      cachedName="ORDERLINENUMBER"
+                      externalMetadataColumnId="Package\Move from CSV to OLEDB table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ORDERLINENUMBER]"
+                      lineageId="Package\Move from CSV to OLEDB table\Flat File Source.Outputs[Flat File Source Output].Columns[ORDERLINENUMBER]" />
+                    <inputColumn
+                      refId="Package\Move from CSV to OLEDB table\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[SALES]"
+                      cachedDataType="r4"
+                      cachedName="SALES"
+                      externalMetadataColumnId="Package\Move from CSV to OLEDB table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SALES]"
+                      lineageId="Package\Move from CSV to OLEDB table\Flat File Source.Outputs[Flat File Source Output].Columns[SALES]" />
+                    <inputColumn
+                      refId="Package\Move from CSV to OLEDB table\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ORDERDATE]"
+                      cachedDataType="date"
+                      cachedName="ORDERDATE"
+                      externalMetadataColumnId="Package\Move from CSV to OLEDB table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ORDERDATE]"
+                      lineageId="Package\Move from CSV to OLEDB table\Flat File Source.Outputs[Flat File Source Output].Columns[ORDERDATE]" />
+                    <inputColumn
+                      refId="Package\Move from CSV to OLEDB table\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[STATUS]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="STATUS"
+                      externalMetadataColumnId="Package\Move from CSV to OLEDB table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[STATUS]"
+                      lineageId="Package\Move from CSV to OLEDB table\Flat File Source.Outputs[Flat File Source Output].Columns[STATUS]" />
+                    <inputColumn
+                      refId="Package\Move from CSV to OLEDB table\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[QTR_ID]"
+                      cachedDataType="i1"
+                      cachedName="QTR_ID"
+                      externalMetadataColumnId="Package\Move from CSV to OLEDB table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[QTR_ID]"
+                      lineageId="Package\Move from CSV to OLEDB table\Flat File Source.Outputs[Flat File Source Output].Columns[QTR_ID]" />
+                    <inputColumn
+                      refId="Package\Move from CSV to OLEDB table\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[MONTH_ID]"
+                      cachedDataType="i1"
+                      cachedName="MONTH_ID"
+                      externalMetadataColumnId="Package\Move from CSV to OLEDB table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[MONTH_ID]"
+                      lineageId="Package\Move from CSV to OLEDB table\Flat File Source.Outputs[Flat File Source Output].Columns[MONTH_ID]" />
+                    <inputColumn
+                      refId="Package\Move from CSV to OLEDB table\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[YEAR_ID]"
+                      cachedDataType="i2"
+                      cachedName="YEAR_ID"
+                      externalMetadataColumnId="Package\Move from CSV to OLEDB table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[YEAR_ID]"
+                      lineageId="Package\Move from CSV to OLEDB table\Flat File Source.Outputs[Flat File Source Output].Columns[YEAR_ID]" />
+                    <inputColumn
+                      refId="Package\Move from CSV to OLEDB table\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[PRODUCTLINE]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="64"
+                      cachedName="PRODUCTLINE"
+                      externalMetadataColumnId="Package\Move from CSV to OLEDB table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PRODUCTLINE]"
+                      lineageId="Package\Move from CSV to OLEDB table\Flat File Source.Outputs[Flat File Source Output].Columns[PRODUCTLINE]" />
+                    <inputColumn
+                      refId="Package\Move from CSV to OLEDB table\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[MSRP]"
+                      cachedDataType="i2"
+                      cachedName="MSRP"
+                      externalMetadataColumnId="Package\Move from CSV to OLEDB table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[MSRP]"
+                      lineageId="Package\Move from CSV to OLEDB table\Flat File Source.Outputs[Flat File Source Output].Columns[MSRP]" />
+                    <inputColumn
+                      refId="Package\Move from CSV to OLEDB table\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[PRODUCTCODE]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="16"
+                      cachedName="PRODUCTCODE"
+                      externalMetadataColumnId="Package\Move from CSV to OLEDB table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PRODUCTCODE]"
+                      lineageId="Package\Move from CSV to OLEDB table\Flat File Source.Outputs[Flat File Source Output].Columns[PRODUCTCODE]" />
+                    <inputColumn
+                      refId="Package\Move from CSV to OLEDB table\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[CUSTOMERNAME]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="128"
+                      cachedName="CUSTOMERNAME"
+                      externalMetadataColumnId="Package\Move from CSV to OLEDB table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CUSTOMERNAME]"
+                      lineageId="Package\Move from CSV to OLEDB table\Flat File Source.Outputs[Flat File Source Output].Columns[CUSTOMERNAME]" />
+                    <inputColumn
+                      refId="Package\Move from CSV to OLEDB table\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[PHONE]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="17"
+                      cachedName="PHONE"
+                      externalMetadataColumnId="Package\Move from CSV to OLEDB table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PHONE]"
+                      lineageId="Package\Move from CSV to OLEDB table\Flat File Source.Outputs[Flat File Source Output].Columns[PHONE]" />
+                    <inputColumn
+                      refId="Package\Move from CSV to OLEDB table\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ADDRESSLINE1]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="512"
+                      cachedName="ADDRESSLINE1"
+                      externalMetadataColumnId="Package\Move from CSV to OLEDB table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ADDRESSLINE1]"
+                      lineageId="Package\Move from CSV to OLEDB table\Flat File Source.Outputs[Flat File Source Output].Columns[ADDRESSLINE1]" />
+                    <inputColumn
+                      refId="Package\Move from CSV to OLEDB table\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ADDRESSLINE2]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="512"
+                      cachedName="ADDRESSLINE2"
+                      externalMetadataColumnId="Package\Move from CSV to OLEDB table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ADDRESSLINE2]"
+                      lineageId="Package\Move from CSV to OLEDB table\Flat File Source.Outputs[Flat File Source Output].Columns[ADDRESSLINE2]" />
+                    <inputColumn
+                      refId="Package\Move from CSV to OLEDB table\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[CITY]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="32"
+                      cachedName="CITY"
+                      externalMetadataColumnId="Package\Move from CSV to OLEDB table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CITY]"
+                      lineageId="Package\Move from CSV to OLEDB table\Flat File Source.Outputs[Flat File Source Output].Columns[CITY]" />
+                    <inputColumn
+                      refId="Package\Move from CSV to OLEDB table\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[STATE]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="32"
+                      cachedName="STATE"
+                      externalMetadataColumnId="Package\Move from CSV to OLEDB table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[STATE]"
+                      lineageId="Package\Move from CSV to OLEDB table\Flat File Source.Outputs[Flat File Source Output].Columns[STATE]" />
+                    <inputColumn
+                      refId="Package\Move from CSV to OLEDB table\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[POSTALCODE]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="9"
+                      cachedName="POSTALCODE"
+                      externalMetadataColumnId="Package\Move from CSV to OLEDB table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[POSTALCODE]"
+                      lineageId="Package\Move from CSV to OLEDB table\Flat File Source.Outputs[Flat File Source Output].Columns[POSTALCODE]" />
+                    <inputColumn
+                      refId="Package\Move from CSV to OLEDB table\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[COUNTRY]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="32"
+                      cachedName="COUNTRY"
+                      externalMetadataColumnId="Package\Move from CSV to OLEDB table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[COUNTRY]"
+                      lineageId="Package\Move from CSV to OLEDB table\Flat File Source.Outputs[Flat File Source Output].Columns[COUNTRY]" />
+                    <inputColumn
+                      refId="Package\Move from CSV to OLEDB table\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[TERRITORY]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="64"
+                      cachedName="TERRITORY"
+                      externalMetadataColumnId="Package\Move from CSV to OLEDB table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TERRITORY]"
+                      lineageId="Package\Move from CSV to OLEDB table\Flat File Source.Outputs[Flat File Source Output].Columns[TERRITORY]" />
+                    <inputColumn
+                      refId="Package\Move from CSV to OLEDB table\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[CONTACTLASTNAME]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="64"
+                      cachedName="CONTACTLASTNAME"
+                      externalMetadataColumnId="Package\Move from CSV to OLEDB table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CONTACTLASTNAME]"
+                      lineageId="Package\Move from CSV to OLEDB table\Flat File Source.Outputs[Flat File Source Output].Columns[CONTACTLASTNAME]" />
+                    <inputColumn
+                      refId="Package\Move from CSV to OLEDB table\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[CONTACTFIRSTNAME]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="64"
+                      cachedName="CONTACTFIRSTNAME"
+                      externalMetadataColumnId="Package\Move from CSV to OLEDB table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CONTACTFIRSTNAME]"
+                      lineageId="Package\Move from CSV to OLEDB table\Flat File Source.Outputs[Flat File Source Output].Columns[CONTACTFIRSTNAME]" />
+                    <inputColumn
+                      refId="Package\Move from CSV to OLEDB table\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[DEALSIZE]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="6"
+                      cachedName="DEALSIZE"
+                      externalMetadataColumnId="Package\Move from CSV to OLEDB table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DEALSIZE]"
+                      lineageId="Package\Move from CSV to OLEDB table\Flat File Source.Outputs[Flat File Source Output].Columns[DEALSIZE]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Move from CSV to OLEDB table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ORDERNUMBER]"
+                      dataType="i2"
+                      name="ORDERNUMBER" />
+                    <externalMetadataColumn
+                      refId="Package\Move from CSV to OLEDB table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[QUANTITYORDERED]"
+                      dataType="i2"
+                      name="QUANTITYORDERED" />
+                    <externalMetadataColumn
+                      refId="Package\Move from CSV to OLEDB table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PRICEEACH]"
+                      dataType="r4"
+                      name="PRICEEACH" />
+                    <externalMetadataColumn
+                      refId="Package\Move from CSV to OLEDB table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ORDERLINENUMBER]"
+                      dataType="i2"
+                      name="ORDERLINENUMBER" />
+                    <externalMetadataColumn
+                      refId="Package\Move from CSV to OLEDB table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SALES]"
+                      dataType="r4"
+                      name="SALES" />
+                    <externalMetadataColumn
+                      refId="Package\Move from CSV to OLEDB table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ORDERDATE]"
+                      dataType="dbTimeStamp"
+                      name="ORDERDATE" />
+                    <externalMetadataColumn
+                      refId="Package\Move from CSV to OLEDB table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[STATUS]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="STATUS" />
+                    <externalMetadataColumn
+                      refId="Package\Move from CSV to OLEDB table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[QTR_ID]"
+                      dataType="i2"
+                      name="QTR_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Move from CSV to OLEDB table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[MONTH_ID]"
+                      dataType="i2"
+                      name="MONTH_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Move from CSV to OLEDB table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[YEAR_ID]"
+                      dataType="i2"
+                      name="YEAR_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Move from CSV to OLEDB table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PRODUCTLINE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="64"
+                      name="PRODUCTLINE" />
+                    <externalMetadataColumn
+                      refId="Package\Move from CSV to OLEDB table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[MSRP]"
+                      dataType="i2"
+                      name="MSRP" />
+                    <externalMetadataColumn
+                      refId="Package\Move from CSV to OLEDB table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PRODUCTCODE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="16"
+                      name="PRODUCTCODE" />
+                    <externalMetadataColumn
+                      refId="Package\Move from CSV to OLEDB table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CUSTOMERNAME]"
+                      codePage="1252"
+                      dataType="str"
+                      length="128"
+                      name="CUSTOMERNAME" />
+                    <externalMetadataColumn
+                      refId="Package\Move from CSV to OLEDB table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PHONE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="17"
+                      name="PHONE" />
+                    <externalMetadataColumn
+                      refId="Package\Move from CSV to OLEDB table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ADDRESSLINE1]"
+                      codePage="1252"
+                      dataType="str"
+                      length="512"
+                      name="ADDRESSLINE1" />
+                    <externalMetadataColumn
+                      refId="Package\Move from CSV to OLEDB table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ADDRESSLINE2]"
+                      codePage="1252"
+                      dataType="str"
+                      length="512"
+                      name="ADDRESSLINE2" />
+                    <externalMetadataColumn
+                      refId="Package\Move from CSV to OLEDB table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CITY]"
+                      codePage="1252"
+                      dataType="str"
+                      length="32"
+                      name="CITY" />
+                    <externalMetadataColumn
+                      refId="Package\Move from CSV to OLEDB table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[STATE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="32"
+                      name="STATE" />
+                    <externalMetadataColumn
+                      refId="Package\Move from CSV to OLEDB table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[POSTALCODE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="9"
+                      name="POSTALCODE" />
+                    <externalMetadataColumn
+                      refId="Package\Move from CSV to OLEDB table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[COUNTRY]"
+                      codePage="1252"
+                      dataType="str"
+                      length="32"
+                      name="COUNTRY" />
+                    <externalMetadataColumn
+                      refId="Package\Move from CSV to OLEDB table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TERRITORY]"
+                      codePage="1252"
+                      dataType="str"
+                      length="64"
+                      name="TERRITORY" />
+                    <externalMetadataColumn
+                      refId="Package\Move from CSV to OLEDB table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CONTACTLASTNAME]"
+                      codePage="1252"
+                      dataType="str"
+                      length="64"
+                      name="CONTACTLASTNAME" />
+                    <externalMetadataColumn
+                      refId="Package\Move from CSV to OLEDB table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CONTACTFIRSTNAME]"
+                      codePage="1252"
+                      dataType="str"
+                      length="64"
+                      name="CONTACTFIRSTNAME" />
+                    <externalMetadataColumn
+                      refId="Package\Move from CSV to OLEDB table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DEALSIZE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="6"
+                      name="DEALSIZE" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Move from CSV to OLEDB table\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Move from CSV to OLEDB table\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Move from CSV to OLEDB table\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Move from CSV to OLEDB table\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Move from CSV to OLEDB table\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Move from CSV to OLEDB table\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Move from CSV to OLEDB table.Paths[Flat File Source Output]"
+              endId="Package\Move from CSV to OLEDB table\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="Flat File Source Output"
+              startId="Package\Move from CSV to OLEDB table\Flat File Source.Outputs[Flat File Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Move from OLEDB to Warehouse"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{013D02FA-E0BA-4B47-93EA-C42D50C21ADC}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Move from OLEDB to Warehouse"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Move from OLEDB to Warehouse\OLE DB Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[FactSales]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Move from OLEDB to Warehouse\OLE DB Destination.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[05fc03d7092157b.SSIS]"
+                  connectionManagerRefId="Package.ConnectionManagers[05fc03d7092157b.SSIS]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Move from OLEDB to Warehouse\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Move from OLEDB to Warehouse\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ORDERNUMBER]"
+                      cachedDataType="i2"
+                      cachedName="ORDERNUMBER"
+                      externalMetadataColumnId="Package\Move from OLEDB to Warehouse\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ORDERNUMBER]"
+                      lineageId="Package\Move from OLEDB to Warehouse\OLE DB Source.Outputs[OLE DB Source Output].Columns[ORDERNUMBER]" />
+                    <inputColumn
+                      refId="Package\Move from OLEDB to Warehouse\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[QUANTITYORDERED]"
+                      cachedDataType="i2"
+                      cachedName="QUANTITYORDERED"
+                      externalMetadataColumnId="Package\Move from OLEDB to Warehouse\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[QUANTITYORDERED]"
+                      lineageId="Package\Move from OLEDB to Warehouse\OLE DB Source.Outputs[OLE DB Source Output].Columns[QUANTITYORDERED]" />
+                    <inputColumn
+                      refId="Package\Move from OLEDB to Warehouse\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[PRICEEACH]"
+                      cachedDataType="r4"
+                      cachedName="PRICEEACH"
+                      externalMetadataColumnId="Package\Move from OLEDB to Warehouse\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PRICEEACH]"
+                      lineageId="Package\Move from OLEDB to Warehouse\OLE DB Source.Outputs[OLE DB Source Output].Columns[PRICEEACH]" />
+                    <inputColumn
+                      refId="Package\Move from OLEDB to Warehouse\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ORDERLINENUMBER]"
+                      cachedDataType="i2"
+                      cachedName="ORDERLINENUMBER"
+                      externalMetadataColumnId="Package\Move from OLEDB to Warehouse\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ORDERLINENUMBER]"
+                      lineageId="Package\Move from OLEDB to Warehouse\OLE DB Source.Outputs[OLE DB Source Output].Columns[ORDERLINENUMBER]" />
+                    <inputColumn
+                      refId="Package\Move from OLEDB to Warehouse\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[SALES]"
+                      cachedDataType="r4"
+                      cachedName="SALES"
+                      externalMetadataColumnId="Package\Move from OLEDB to Warehouse\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SALES]"
+                      lineageId="Package\Move from OLEDB to Warehouse\OLE DB Source.Outputs[OLE DB Source Output].Columns[SALES]" />
+                    <inputColumn
+                      refId="Package\Move from OLEDB to Warehouse\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ORDERDATE]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="ORDERDATE"
+                      externalMetadataColumnId="Package\Move from OLEDB to Warehouse\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ORDERDATE]"
+                      lineageId="Package\Move from OLEDB to Warehouse\OLE DB Source.Outputs[OLE DB Source Output].Columns[ORDERDATE]" />
+                    <inputColumn
+                      refId="Package\Move from OLEDB to Warehouse\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[STATUS]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="STATUS"
+                      externalMetadataColumnId="Package\Move from OLEDB to Warehouse\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[STATUS]"
+                      lineageId="Package\Move from OLEDB to Warehouse\OLE DB Source.Outputs[OLE DB Source Output].Columns[STATUS]" />
+                    <inputColumn
+                      refId="Package\Move from OLEDB to Warehouse\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[QTR_ID]"
+                      cachedDataType="i2"
+                      cachedName="QTR_ID"
+                      externalMetadataColumnId="Package\Move from OLEDB to Warehouse\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[QTR_ID]"
+                      lineageId="Package\Move from OLEDB to Warehouse\OLE DB Source.Outputs[OLE DB Source Output].Columns[QTR_ID]" />
+                    <inputColumn
+                      refId="Package\Move from OLEDB to Warehouse\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[MONTH_ID]"
+                      cachedDataType="i2"
+                      cachedName="MONTH_ID"
+                      externalMetadataColumnId="Package\Move from OLEDB to Warehouse\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[MONTH_ID]"
+                      lineageId="Package\Move from OLEDB to Warehouse\OLE DB Source.Outputs[OLE DB Source Output].Columns[MONTH_ID]" />
+                    <inputColumn
+                      refId="Package\Move from OLEDB to Warehouse\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[YEAR_ID]"
+                      cachedDataType="i2"
+                      cachedName="YEAR_ID"
+                      externalMetadataColumnId="Package\Move from OLEDB to Warehouse\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[YEAR_ID]"
+                      lineageId="Package\Move from OLEDB to Warehouse\OLE DB Source.Outputs[OLE DB Source Output].Columns[YEAR_ID]" />
+                    <inputColumn
+                      refId="Package\Move from OLEDB to Warehouse\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[PRODUCTLINE]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="64"
+                      cachedName="PRODUCTLINE"
+                      externalMetadataColumnId="Package\Move from OLEDB to Warehouse\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PRODUCTLINE]"
+                      lineageId="Package\Move from OLEDB to Warehouse\OLE DB Source.Outputs[OLE DB Source Output].Columns[PRODUCTLINE]" />
+                    <inputColumn
+                      refId="Package\Move from OLEDB to Warehouse\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[MSRP]"
+                      cachedDataType="i2"
+                      cachedName="MSRP"
+                      externalMetadataColumnId="Package\Move from OLEDB to Warehouse\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[MSRP]"
+                      lineageId="Package\Move from OLEDB to Warehouse\OLE DB Source.Outputs[OLE DB Source Output].Columns[MSRP]" />
+                    <inputColumn
+                      refId="Package\Move from OLEDB to Warehouse\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[PRODUCTCODE]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="16"
+                      cachedName="PRODUCTCODE"
+                      externalMetadataColumnId="Package\Move from OLEDB to Warehouse\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PRODUCTCODE]"
+                      lineageId="Package\Move from OLEDB to Warehouse\OLE DB Source.Outputs[OLE DB Source Output].Columns[PRODUCTCODE]" />
+                    <inputColumn
+                      refId="Package\Move from OLEDB to Warehouse\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[CUSTOMERNAME]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="128"
+                      cachedName="CUSTOMERNAME"
+                      externalMetadataColumnId="Package\Move from OLEDB to Warehouse\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CUSTOMERNAME]"
+                      lineageId="Package\Move from OLEDB to Warehouse\OLE DB Source.Outputs[OLE DB Source Output].Columns[CUSTOMERNAME]" />
+                    <inputColumn
+                      refId="Package\Move from OLEDB to Warehouse\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[PHONE]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="17"
+                      cachedName="PHONE"
+                      externalMetadataColumnId="Package\Move from OLEDB to Warehouse\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PHONE]"
+                      lineageId="Package\Move from OLEDB to Warehouse\OLE DB Source.Outputs[OLE DB Source Output].Columns[PHONE]" />
+                    <inputColumn
+                      refId="Package\Move from OLEDB to Warehouse\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ADDRESSLINE1]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="512"
+                      cachedName="ADDRESSLINE1"
+                      externalMetadataColumnId="Package\Move from OLEDB to Warehouse\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ADDRESSLINE1]"
+                      lineageId="Package\Move from OLEDB to Warehouse\OLE DB Source.Outputs[OLE DB Source Output].Columns[ADDRESSLINE1]" />
+                    <inputColumn
+                      refId="Package\Move from OLEDB to Warehouse\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ADDRESSLINE2]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="512"
+                      cachedName="ADDRESSLINE2"
+                      externalMetadataColumnId="Package\Move from OLEDB to Warehouse\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ADDRESSLINE2]"
+                      lineageId="Package\Move from OLEDB to Warehouse\OLE DB Source.Outputs[OLE DB Source Output].Columns[ADDRESSLINE2]" />
+                    <inputColumn
+                      refId="Package\Move from OLEDB to Warehouse\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[CITY]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="32"
+                      cachedName="CITY"
+                      externalMetadataColumnId="Package\Move from OLEDB to Warehouse\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CITY]"
+                      lineageId="Package\Move from OLEDB to Warehouse\OLE DB Source.Outputs[OLE DB Source Output].Columns[CITY]" />
+                    <inputColumn
+                      refId="Package\Move from OLEDB to Warehouse\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[STATE]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="32"
+                      cachedName="STATE"
+                      externalMetadataColumnId="Package\Move from OLEDB to Warehouse\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[STATE]"
+                      lineageId="Package\Move from OLEDB to Warehouse\OLE DB Source.Outputs[OLE DB Source Output].Columns[STATE]" />
+                    <inputColumn
+                      refId="Package\Move from OLEDB to Warehouse\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[POSTALCODE]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="9"
+                      cachedName="POSTALCODE"
+                      externalMetadataColumnId="Package\Move from OLEDB to Warehouse\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[POSTALCODE]"
+                      lineageId="Package\Move from OLEDB to Warehouse\OLE DB Source.Outputs[OLE DB Source Output].Columns[POSTALCODE]" />
+                    <inputColumn
+                      refId="Package\Move from OLEDB to Warehouse\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[COUNTRY]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="32"
+                      cachedName="COUNTRY"
+                      externalMetadataColumnId="Package\Move from OLEDB to Warehouse\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[COUNTRY]"
+                      lineageId="Package\Move from OLEDB to Warehouse\OLE DB Source.Outputs[OLE DB Source Output].Columns[COUNTRY]" />
+                    <inputColumn
+                      refId="Package\Move from OLEDB to Warehouse\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[TERRITORY]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="64"
+                      cachedName="TERRITORY"
+                      externalMetadataColumnId="Package\Move from OLEDB to Warehouse\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TERRITORY]"
+                      lineageId="Package\Move from OLEDB to Warehouse\OLE DB Source.Outputs[OLE DB Source Output].Columns[TERRITORY]" />
+                    <inputColumn
+                      refId="Package\Move from OLEDB to Warehouse\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[CONTACTLASTNAME]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="64"
+                      cachedName="CONTACTLASTNAME"
+                      externalMetadataColumnId="Package\Move from OLEDB to Warehouse\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CONTACTLASTNAME]"
+                      lineageId="Package\Move from OLEDB to Warehouse\OLE DB Source.Outputs[OLE DB Source Output].Columns[CONTACTLASTNAME]" />
+                    <inputColumn
+                      refId="Package\Move from OLEDB to Warehouse\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[CONTACTFIRSTNAME]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="64"
+                      cachedName="CONTACTFIRSTNAME"
+                      externalMetadataColumnId="Package\Move from OLEDB to Warehouse\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CONTACTFIRSTNAME]"
+                      lineageId="Package\Move from OLEDB to Warehouse\OLE DB Source.Outputs[OLE DB Source Output].Columns[CONTACTFIRSTNAME]" />
+                    <inputColumn
+                      refId="Package\Move from OLEDB to Warehouse\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[DEALSIZE]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="6"
+                      cachedName="DEALSIZE"
+                      externalMetadataColumnId="Package\Move from OLEDB to Warehouse\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DEALSIZE]"
+                      lineageId="Package\Move from OLEDB to Warehouse\OLE DB Source.Outputs[OLE DB Source Output].Columns[DEALSIZE]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Move from OLEDB to Warehouse\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ORDERNUMBER]"
+                      dataType="i2"
+                      name="ORDERNUMBER" />
+                    <externalMetadataColumn
+                      refId="Package\Move from OLEDB to Warehouse\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[QUANTITYORDERED]"
+                      dataType="i2"
+                      name="QUANTITYORDERED" />
+                    <externalMetadataColumn
+                      refId="Package\Move from OLEDB to Warehouse\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PRICEEACH]"
+                      dataType="r4"
+                      name="PRICEEACH" />
+                    <externalMetadataColumn
+                      refId="Package\Move from OLEDB to Warehouse\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ORDERLINENUMBER]"
+                      dataType="i2"
+                      name="ORDERLINENUMBER" />
+                    <externalMetadataColumn
+                      refId="Package\Move from OLEDB to Warehouse\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SALES]"
+                      dataType="r4"
+                      name="SALES" />
+                    <externalMetadataColumn
+                      refId="Package\Move from OLEDB to Warehouse\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ORDERDATE]"
+                      dataType="dbTimeStamp"
+                      name="ORDERDATE" />
+                    <externalMetadataColumn
+                      refId="Package\Move from OLEDB to Warehouse\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[STATUS]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="STATUS" />
+                    <externalMetadataColumn
+                      refId="Package\Move from OLEDB to Warehouse\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[QTR_ID]"
+                      dataType="i2"
+                      name="QTR_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Move from OLEDB to Warehouse\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[MONTH_ID]"
+                      dataType="i2"
+                      name="MONTH_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Move from OLEDB to Warehouse\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[YEAR_ID]"
+                      dataType="i2"
+                      name="YEAR_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Move from OLEDB to Warehouse\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PRODUCTLINE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="64"
+                      name="PRODUCTLINE" />
+                    <externalMetadataColumn
+                      refId="Package\Move from OLEDB to Warehouse\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[MSRP]"
+                      dataType="i2"
+                      name="MSRP" />
+                    <externalMetadataColumn
+                      refId="Package\Move from OLEDB to Warehouse\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PRODUCTCODE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="16"
+                      name="PRODUCTCODE" />
+                    <externalMetadataColumn
+                      refId="Package\Move from OLEDB to Warehouse\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CUSTOMERNAME]"
+                      codePage="1252"
+                      dataType="str"
+                      length="128"
+                      name="CUSTOMERNAME" />
+                    <externalMetadataColumn
+                      refId="Package\Move from OLEDB to Warehouse\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PHONE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="17"
+                      name="PHONE" />
+                    <externalMetadataColumn
+                      refId="Package\Move from OLEDB to Warehouse\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ADDRESSLINE1]"
+                      codePage="1252"
+                      dataType="str"
+                      length="512"
+                      name="ADDRESSLINE1" />
+                    <externalMetadataColumn
+                      refId="Package\Move from OLEDB to Warehouse\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ADDRESSLINE2]"
+                      codePage="1252"
+                      dataType="str"
+                      length="512"
+                      name="ADDRESSLINE2" />
+                    <externalMetadataColumn
+                      refId="Package\Move from OLEDB to Warehouse\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CITY]"
+                      codePage="1252"
+                      dataType="str"
+                      length="32"
+                      name="CITY" />
+                    <externalMetadataColumn
+                      refId="Package\Move from OLEDB to Warehouse\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[STATE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="32"
+                      name="STATE" />
+                    <externalMetadataColumn
+                      refId="Package\Move from OLEDB to Warehouse\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[POSTALCODE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="9"
+                      name="POSTALCODE" />
+                    <externalMetadataColumn
+                      refId="Package\Move from OLEDB to Warehouse\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[COUNTRY]"
+                      codePage="1252"
+                      dataType="str"
+                      length="32"
+                      name="COUNTRY" />
+                    <externalMetadataColumn
+                      refId="Package\Move from OLEDB to Warehouse\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TERRITORY]"
+                      codePage="1252"
+                      dataType="str"
+                      length="64"
+                      name="TERRITORY" />
+                    <externalMetadataColumn
+                      refId="Package\Move from OLEDB to Warehouse\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CONTACTLASTNAME]"
+                      codePage="1252"
+                      dataType="str"
+                      length="64"
+                      name="CONTACTLASTNAME" />
+                    <externalMetadataColumn
+                      refId="Package\Move from OLEDB to Warehouse\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CONTACTFIRSTNAME]"
+                      codePage="1252"
+                      dataType="str"
+                      length="64"
+                      name="CONTACTFIRSTNAME" />
+                    <externalMetadataColumn
+                      refId="Package\Move from OLEDB to Warehouse\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DEALSIZE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="6"
+                      name="DEALSIZE" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Move from OLEDB to Warehouse\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Move from OLEDB to Warehouse\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Move from OLEDB to Warehouse\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Move from OLEDB to Warehouse\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Move from OLEDB to Warehouse\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Move from OLEDB to Warehouse\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Move from OLEDB to Warehouse\OLE DB Source"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="OLE DB Source"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[SalesData]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Move from OLEDB to Warehouse\OLE DB Source.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[05fc03d7092157b.SSIS]"
+                  connectionManagerRefId="Package.ConnectionManagers[05fc03d7092157b.SSIS]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Move from OLEDB to Warehouse\OLE DB Source.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Move from OLEDB to Warehouse\OLE DB Source.Outputs[OLE DB Source Output].Columns[ORDERNUMBER]"
+                      dataType="i2"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Move from OLEDB to Warehouse\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ORDERNUMBER]"
+                      lineageId="Package\Move from OLEDB to Warehouse\OLE DB Source.Outputs[OLE DB Source Output].Columns[ORDERNUMBER]"
+                      name="ORDERNUMBER"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Move from OLEDB to Warehouse\OLE DB Source.Outputs[OLE DB Source Output].Columns[QUANTITYORDERED]"
+                      dataType="i2"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Move from OLEDB to Warehouse\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[QUANTITYORDERED]"
+                      lineageId="Package\Move from OLEDB to Warehouse\OLE DB Source.Outputs[OLE DB Source Output].Columns[QUANTITYORDERED]"
+                      name="QUANTITYORDERED"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Move from OLEDB to Warehouse\OLE DB Source.Outputs[OLE DB Source Output].Columns[PRICEEACH]"
+                      dataType="r4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Move from OLEDB to Warehouse\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[PRICEEACH]"
+                      lineageId="Package\Move from OLEDB to Warehouse\OLE DB Source.Outputs[OLE DB Source Output].Columns[PRICEEACH]"
+                      name="PRICEEACH"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Move from OLEDB to Warehouse\OLE DB Source.Outputs[OLE DB Source Output].Columns[ORDERLINENUMBER]"
+                      dataType="i2"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Move from OLEDB to Warehouse\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ORDERLINENUMBER]"
+                      lineageId="Package\Move from OLEDB to Warehouse\OLE DB Source.Outputs[OLE DB Source Output].Columns[ORDERLINENUMBER]"
+                      name="ORDERLINENUMBER"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Move from OLEDB to Warehouse\OLE DB Source.Outputs[OLE DB Source Output].Columns[SALES]"
+                      dataType="r4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Move from OLEDB to Warehouse\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[SALES]"
+                      lineageId="Package\Move from OLEDB to Warehouse\OLE DB Source.Outputs[OLE DB Source Output].Columns[SALES]"
+                      name="SALES"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Move from OLEDB to Warehouse\OLE DB Source.Outputs[OLE DB Source Output].Columns[ORDERDATE]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Move from OLEDB to Warehouse\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ORDERDATE]"
+                      lineageId="Package\Move from OLEDB to Warehouse\OLE DB Source.Outputs[OLE DB Source Output].Columns[ORDERDATE]"
+                      name="ORDERDATE"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Move from OLEDB to Warehouse\OLE DB Source.Outputs[OLE DB Source Output].Columns[STATUS]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Move from OLEDB to Warehouse\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[STATUS]"
+                      length="10"
+                      lineageId="Package\Move from OLEDB to Warehouse\OLE DB Source.Outputs[OLE DB Source Output].Columns[STATUS]"
+                      name="STATUS"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Move from OLEDB to Warehouse\OLE DB Source.Outputs[OLE DB Source Output].Columns[QTR_ID]"
+                      dataType="i2"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Move from OLEDB to Warehouse\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[QTR_ID]"
+                      lineageId="Package\Move from OLEDB to Warehouse\OLE DB Source.Outputs[OLE DB Source Output].Columns[QTR_ID]"
+                      name="QTR_ID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Move from OLEDB to Warehouse\OLE DB Source.Outputs[OLE DB Source Output].Columns[MONTH_ID]"
+                      dataType="i2"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Move from OLEDB to Warehouse\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[MONTH_ID]"
+                      lineageId="Package\Move from OLEDB to Warehouse\OLE DB Source.Outputs[OLE DB Source Output].Columns[MONTH_ID]"
+                      name="MONTH_ID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Move from OLEDB to Warehouse\OLE DB Source.Outputs[OLE DB Source Output].Columns[YEAR_ID]"
+                      dataType="i2"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Move from OLEDB to Warehouse\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[YEAR_ID]"
+                      lineageId="Package\Move from OLEDB to Warehouse\OLE DB Source.Outputs[OLE DB Source Output].Columns[YEAR_ID]"
+                      name="YEAR_ID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Move from OLEDB to Warehouse\OLE DB Source.Outputs[OLE DB Source Output].Columns[PRODUCTLINE]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Move from OLEDB to Warehouse\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[PRODUCTLINE]"
+                      length="64"
+                      lineageId="Package\Move from OLEDB to Warehouse\OLE DB Source.Outputs[OLE DB Source Output].Columns[PRODUCTLINE]"
+                      name="PRODUCTLINE"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Move from OLEDB to Warehouse\OLE DB Source.Outputs[OLE DB Source Output].Columns[MSRP]"
+                      dataType="i2"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Move from OLEDB to Warehouse\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[MSRP]"
+                      lineageId="Package\Move from OLEDB to Warehouse\OLE DB Source.Outputs[OLE DB Source Output].Columns[MSRP]"
+                      name="MSRP"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Move from OLEDB to Warehouse\OLE DB Source.Outputs[OLE DB Source Output].Columns[PRODUCTCODE]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Move from OLEDB to Warehouse\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[PRODUCTCODE]"
+                      length="16"
+                      lineageId="Package\Move from OLEDB to Warehouse\OLE DB Source.Outputs[OLE DB Source Output].Columns[PRODUCTCODE]"
+                      name="PRODUCTCODE"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Move from OLEDB to Warehouse\OLE DB Source.Outputs[OLE DB Source Output].Columns[CUSTOMERNAME]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Move from OLEDB to Warehouse\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CUSTOMERNAME]"
+                      length="128"
+                      lineageId="Package\Move from OLEDB to Warehouse\OLE DB Source.Outputs[OLE DB Source Output].Columns[CUSTOMERNAME]"
+                      name="CUSTOMERNAME"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Move from OLEDB to Warehouse\OLE DB Source.Outputs[OLE DB Source Output].Columns[PHONE]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Move from OLEDB to Warehouse\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[PHONE]"
+                      length="17"
+                      lineageId="Package\Move from OLEDB to Warehouse\OLE DB Source.Outputs[OLE DB Source Output].Columns[PHONE]"
+                      name="PHONE"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Move from OLEDB to Warehouse\OLE DB Source.Outputs[OLE DB Source Output].Columns[ADDRESSLINE1]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Move from OLEDB to Warehouse\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ADDRESSLINE1]"
+                      length="512"
+                      lineageId="Package\Move from OLEDB to Warehouse\OLE DB Source.Outputs[OLE DB Source Output].Columns[ADDRESSLINE1]"
+                      name="ADDRESSLINE1"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Move from OLEDB to Warehouse\OLE DB Source.Outputs[OLE DB Source Output].Columns[ADDRESSLINE2]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Move from OLEDB to Warehouse\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ADDRESSLINE2]"
+                      length="512"
+                      lineageId="Package\Move from OLEDB to Warehouse\OLE DB Source.Outputs[OLE DB Source Output].Columns[ADDRESSLINE2]"
+                      name="ADDRESSLINE2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Move from OLEDB to Warehouse\OLE DB Source.Outputs[OLE DB Source Output].Columns[CITY]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Move from OLEDB to Warehouse\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CITY]"
+                      length="32"
+                      lineageId="Package\Move from OLEDB to Warehouse\OLE DB Source.Outputs[OLE DB Source Output].Columns[CITY]"
+                      name="CITY"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Move from OLEDB to Warehouse\OLE DB Source.Outputs[OLE DB Source Output].Columns[STATE]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Move from OLEDB to Warehouse\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[STATE]"
+                      length="32"
+                      lineageId="Package\Move from OLEDB to Warehouse\OLE DB Source.Outputs[OLE DB Source Output].Columns[STATE]"
+                      name="STATE"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Move from OLEDB to Warehouse\OLE DB Source.Outputs[OLE DB Source Output].Columns[POSTALCODE]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Move from OLEDB to Warehouse\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[POSTALCODE]"
+                      length="9"
+                      lineageId="Package\Move from OLEDB to Warehouse\OLE DB Source.Outputs[OLE DB Source Output].Columns[POSTALCODE]"
+                      name="POSTALCODE"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Move from OLEDB to Warehouse\OLE DB Source.Outputs[OLE DB Source Output].Columns[COUNTRY]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Move from OLEDB to Warehouse\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[COUNTRY]"
+                      length="32"
+                      lineageId="Package\Move from OLEDB to Warehouse\OLE DB Source.Outputs[OLE DB Source Output].Columns[COUNTRY]"
+                      name="COUNTRY"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Move from OLEDB to Warehouse\OLE DB Source.Outputs[OLE DB Source Output].Columns[TERRITORY]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Move from OLEDB to Warehouse\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[TERRITORY]"
+                      length="64"
+                      lineageId="Package\Move from OLEDB to Warehouse\OLE DB Source.Outputs[OLE DB Source Output].Columns[TERRITORY]"
+                      name="TERRITORY"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Move from OLEDB to Warehouse\OLE DB Source.Outputs[OLE DB Source Output].Columns[CONTACTLASTNAME]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Move from OLEDB to Warehouse\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CONTACTLASTNAME]"
+                      length="64"
+                      lineageId="Package\Move from OLEDB to Warehouse\OLE DB Source.Outputs[OLE DB Source Output].Columns[CONTACTLASTNAME]"
+                      name="CONTACTLASTNAME"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Move from OLEDB to Warehouse\OLE DB Source.Outputs[OLE DB Source Output].Columns[CONTACTFIRSTNAME]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Move from OLEDB to Warehouse\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CONTACTFIRSTNAME]"
+                      length="64"
+                      lineageId="Package\Move from OLEDB to Warehouse\OLE DB Source.Outputs[OLE DB Source Output].Columns[CONTACTFIRSTNAME]"
+                      name="CONTACTFIRSTNAME"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Move from OLEDB to Warehouse\OLE DB Source.Outputs[OLE DB Source Output].Columns[DEALSIZE]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Move from OLEDB to Warehouse\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DEALSIZE]"
+                      length="6"
+                      lineageId="Package\Move from OLEDB to Warehouse\OLE DB Source.Outputs[OLE DB Source Output].Columns[DEALSIZE]"
+                      name="DEALSIZE"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Move from OLEDB to Warehouse\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ORDERNUMBER]"
+                      dataType="i2"
+                      name="ORDERNUMBER" />
+                    <externalMetadataColumn
+                      refId="Package\Move from OLEDB to Warehouse\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[QUANTITYORDERED]"
+                      dataType="i2"
+                      name="QUANTITYORDERED" />
+                    <externalMetadataColumn
+                      refId="Package\Move from OLEDB to Warehouse\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[PRICEEACH]"
+                      dataType="r4"
+                      name="PRICEEACH" />
+                    <externalMetadataColumn
+                      refId="Package\Move from OLEDB to Warehouse\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ORDERLINENUMBER]"
+                      dataType="i2"
+                      name="ORDERLINENUMBER" />
+                    <externalMetadataColumn
+                      refId="Package\Move from OLEDB to Warehouse\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[SALES]"
+                      dataType="r4"
+                      name="SALES" />
+                    <externalMetadataColumn
+                      refId="Package\Move from OLEDB to Warehouse\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ORDERDATE]"
+                      dataType="dbTimeStamp"
+                      name="ORDERDATE" />
+                    <externalMetadataColumn
+                      refId="Package\Move from OLEDB to Warehouse\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[STATUS]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="STATUS" />
+                    <externalMetadataColumn
+                      refId="Package\Move from OLEDB to Warehouse\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[QTR_ID]"
+                      dataType="i2"
+                      name="QTR_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Move from OLEDB to Warehouse\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[MONTH_ID]"
+                      dataType="i2"
+                      name="MONTH_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Move from OLEDB to Warehouse\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[YEAR_ID]"
+                      dataType="i2"
+                      name="YEAR_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Move from OLEDB to Warehouse\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[PRODUCTLINE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="64"
+                      name="PRODUCTLINE" />
+                    <externalMetadataColumn
+                      refId="Package\Move from OLEDB to Warehouse\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[MSRP]"
+                      dataType="i2"
+                      name="MSRP" />
+                    <externalMetadataColumn
+                      refId="Package\Move from OLEDB to Warehouse\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[PRODUCTCODE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="16"
+                      name="PRODUCTCODE" />
+                    <externalMetadataColumn
+                      refId="Package\Move from OLEDB to Warehouse\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CUSTOMERNAME]"
+                      codePage="1252"
+                      dataType="str"
+                      length="128"
+                      name="CUSTOMERNAME" />
+                    <externalMetadataColumn
+                      refId="Package\Move from OLEDB to Warehouse\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[PHONE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="17"
+                      name="PHONE" />
+                    <externalMetadataColumn
+                      refId="Package\Move from OLEDB to Warehouse\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ADDRESSLINE1]"
+                      codePage="1252"
+                      dataType="str"
+                      length="512"
+                      name="ADDRESSLINE1" />
+                    <externalMetadataColumn
+                      refId="Package\Move from OLEDB to Warehouse\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ADDRESSLINE2]"
+                      codePage="1252"
+                      dataType="str"
+                      length="512"
+                      name="ADDRESSLINE2" />
+                    <externalMetadataColumn
+                      refId="Package\Move from OLEDB to Warehouse\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CITY]"
+                      codePage="1252"
+                      dataType="str"
+                      length="32"
+                      name="CITY" />
+                    <externalMetadataColumn
+                      refId="Package\Move from OLEDB to Warehouse\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[STATE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="32"
+                      name="STATE" />
+                    <externalMetadataColumn
+                      refId="Package\Move from OLEDB to Warehouse\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[POSTALCODE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="9"
+                      name="POSTALCODE" />
+                    <externalMetadataColumn
+                      refId="Package\Move from OLEDB to Warehouse\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[COUNTRY]"
+                      codePage="1252"
+                      dataType="str"
+                      length="32"
+                      name="COUNTRY" />
+                    <externalMetadataColumn
+                      refId="Package\Move from OLEDB to Warehouse\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[TERRITORY]"
+                      codePage="1252"
+                      dataType="str"
+                      length="64"
+                      name="TERRITORY" />
+                    <externalMetadataColumn
+                      refId="Package\Move from OLEDB to Warehouse\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CONTACTLASTNAME]"
+                      codePage="1252"
+                      dataType="str"
+                      length="64"
+                      name="CONTACTLASTNAME" />
+                    <externalMetadataColumn
+                      refId="Package\Move from OLEDB to Warehouse\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CONTACTFIRSTNAME]"
+                      codePage="1252"
+                      dataType="str"
+                      length="64"
+                      name="CONTACTFIRSTNAME" />
+                    <externalMetadataColumn
+                      refId="Package\Move from OLEDB to Warehouse\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DEALSIZE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="6"
+                      name="DEALSIZE" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Move from OLEDB to Warehouse\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Move from OLEDB to Warehouse\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ORDERNUMBER]"
+                      dataType="i2"
+                      lineageId="Package\Move from OLEDB to Warehouse\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ORDERNUMBER]"
+                      name="ORDERNUMBER" />
+                    <outputColumn
+                      refId="Package\Move from OLEDB to Warehouse\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[QUANTITYORDERED]"
+                      dataType="i2"
+                      lineageId="Package\Move from OLEDB to Warehouse\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[QUANTITYORDERED]"
+                      name="QUANTITYORDERED" />
+                    <outputColumn
+                      refId="Package\Move from OLEDB to Warehouse\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[PRICEEACH]"
+                      dataType="r4"
+                      lineageId="Package\Move from OLEDB to Warehouse\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[PRICEEACH]"
+                      name="PRICEEACH" />
+                    <outputColumn
+                      refId="Package\Move from OLEDB to Warehouse\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ORDERLINENUMBER]"
+                      dataType="i2"
+                      lineageId="Package\Move from OLEDB to Warehouse\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ORDERLINENUMBER]"
+                      name="ORDERLINENUMBER" />
+                    <outputColumn
+                      refId="Package\Move from OLEDB to Warehouse\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[SALES]"
+                      dataType="r4"
+                      lineageId="Package\Move from OLEDB to Warehouse\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[SALES]"
+                      name="SALES" />
+                    <outputColumn
+                      refId="Package\Move from OLEDB to Warehouse\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ORDERDATE]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Move from OLEDB to Warehouse\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ORDERDATE]"
+                      name="ORDERDATE" />
+                    <outputColumn
+                      refId="Package\Move from OLEDB to Warehouse\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[STATUS]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      lineageId="Package\Move from OLEDB to Warehouse\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[STATUS]"
+                      name="STATUS" />
+                    <outputColumn
+                      refId="Package\Move from OLEDB to Warehouse\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[QTR_ID]"
+                      dataType="i2"
+                      lineageId="Package\Move from OLEDB to Warehouse\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[QTR_ID]"
+                      name="QTR_ID" />
+                    <outputColumn
+                      refId="Package\Move from OLEDB to Warehouse\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[MONTH_ID]"
+                      dataType="i2"
+                      lineageId="Package\Move from OLEDB to Warehouse\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[MONTH_ID]"
+                      name="MONTH_ID" />
+                    <outputColumn
+                      refId="Package\Move from OLEDB to Warehouse\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[YEAR_ID]"
+                      dataType="i2"
+                      lineageId="Package\Move from OLEDB to Warehouse\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[YEAR_ID]"
+                      name="YEAR_ID" />
+                    <outputColumn
+                      refId="Package\Move from OLEDB to Warehouse\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[PRODUCTLINE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="64"
+                      lineageId="Package\Move from OLEDB to Warehouse\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[PRODUCTLINE]"
+                      name="PRODUCTLINE" />
+                    <outputColumn
+                      refId="Package\Move from OLEDB to Warehouse\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[MSRP]"
+                      dataType="i2"
+                      lineageId="Package\Move from OLEDB to Warehouse\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[MSRP]"
+                      name="MSRP" />
+                    <outputColumn
+                      refId="Package\Move from OLEDB to Warehouse\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[PRODUCTCODE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="16"
+                      lineageId="Package\Move from OLEDB to Warehouse\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[PRODUCTCODE]"
+                      name="PRODUCTCODE" />
+                    <outputColumn
+                      refId="Package\Move from OLEDB to Warehouse\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CUSTOMERNAME]"
+                      codePage="1252"
+                      dataType="str"
+                      length="128"
+                      lineageId="Package\Move from OLEDB to Warehouse\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CUSTOMERNAME]"
+                      name="CUSTOMERNAME" />
+                    <outputColumn
+                      refId="Package\Move from OLEDB to Warehouse\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[PHONE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="17"
+                      lineageId="Package\Move from OLEDB to Warehouse\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[PHONE]"
+                      name="PHONE" />
+                    <outputColumn
+                      refId="Package\Move from OLEDB to Warehouse\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ADDRESSLINE1]"
+                      codePage="1252"
+                      dataType="str"
+                      length="512"
+                      lineageId="Package\Move from OLEDB to Warehouse\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ADDRESSLINE1]"
+                      name="ADDRESSLINE1" />
+                    <outputColumn
+                      refId="Package\Move from OLEDB to Warehouse\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ADDRESSLINE2]"
+                      codePage="1252"
+                      dataType="str"
+                      length="512"
+                      lineageId="Package\Move from OLEDB to Warehouse\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ADDRESSLINE2]"
+                      name="ADDRESSLINE2" />
+                    <outputColumn
+                      refId="Package\Move from OLEDB to Warehouse\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CITY]"
+                      codePage="1252"
+                      dataType="str"
+                      length="32"
+                      lineageId="Package\Move from OLEDB to Warehouse\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CITY]"
+                      name="CITY" />
+                    <outputColumn
+                      refId="Package\Move from OLEDB to Warehouse\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[STATE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="32"
+                      lineageId="Package\Move from OLEDB to Warehouse\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[STATE]"
+                      name="STATE" />
+                    <outputColumn
+                      refId="Package\Move from OLEDB to Warehouse\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[POSTALCODE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="9"
+                      lineageId="Package\Move from OLEDB to Warehouse\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[POSTALCODE]"
+                      name="POSTALCODE" />
+                    <outputColumn
+                      refId="Package\Move from OLEDB to Warehouse\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[COUNTRY]"
+                      codePage="1252"
+                      dataType="str"
+                      length="32"
+                      lineageId="Package\Move from OLEDB to Warehouse\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[COUNTRY]"
+                      name="COUNTRY" />
+                    <outputColumn
+                      refId="Package\Move from OLEDB to Warehouse\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[TERRITORY]"
+                      codePage="1252"
+                      dataType="str"
+                      length="64"
+                      lineageId="Package\Move from OLEDB to Warehouse\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[TERRITORY]"
+                      name="TERRITORY" />
+                    <outputColumn
+                      refId="Package\Move from OLEDB to Warehouse\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CONTACTLASTNAME]"
+                      codePage="1252"
+                      dataType="str"
+                      length="64"
+                      lineageId="Package\Move from OLEDB to Warehouse\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CONTACTLASTNAME]"
+                      name="CONTACTLASTNAME" />
+                    <outputColumn
+                      refId="Package\Move from OLEDB to Warehouse\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CONTACTFIRSTNAME]"
+                      codePage="1252"
+                      dataType="str"
+                      length="64"
+                      lineageId="Package\Move from OLEDB to Warehouse\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CONTACTFIRSTNAME]"
+                      name="CONTACTFIRSTNAME" />
+                    <outputColumn
+                      refId="Package\Move from OLEDB to Warehouse\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DEALSIZE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="6"
+                      lineageId="Package\Move from OLEDB to Warehouse\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DEALSIZE]"
+                      name="DEALSIZE" />
+                    <outputColumn
+                      refId="Package\Move from OLEDB to Warehouse\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Move from OLEDB to Warehouse\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Move from OLEDB to Warehouse\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Move from OLEDB to Warehouse\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Move from OLEDB to Warehouse.Paths[OLE DB Source Output]"
+              endId="Package\Move from OLEDB to Warehouse\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\Move from OLEDB to Warehouse\OLE DB Source.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{E2CD9582-CED5-40A5-BDB6-73674330BF63}"
+      DTS:From="Package\Move from CSV to OLEDB table"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Move from OLEDB to Warehouse" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="236,42"
+          Id="Package\Move from CSV to OLEDB table"
+          TopLeft="226,126" />
+        <NodeLayout
+          Size="242,42"
+          Id="Package\Move from OLEDB to Warehouse"
+          TopLeft="375,319" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="344,168">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="152,151"
+              Start="0,0"
+              End="152,143.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,71.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,71.5"
+                    Point2="0,75.5"
+                    Point3="4,75.5" />
+                  <mssgle:LineSegment
+                    End="148,75.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="148,75.5"
+                    Point2="152,75.5"
+                    Point3="152,79.5" />
+                  <mssgle:LineSegment
+                    End="152,143.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <AnnotationLayout
+          Text="First move data from flat file source to OLEDB destination [SalesData]&#xA;Then, move that data from SalesData to FactSales table"
+          ParentId="Package"
+          FontInfo="{assembly:Null}"
+          Size="395,56"
+          Id="e38d440d-e2d7-4853-90e5-7908e5e9e917"
+          TopLeft="9,36" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Move from CSV to OLEDB table">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="156,42"
+          Id="Package\Move from CSV to OLEDB table\Flat File Source"
+          TopLeft="276,55" />
+        <NodeLayout
+          Size="177,42"
+          Id="Package\Move from CSV to OLEDB table\OLE DB Destination"
+          TopLeft="419,164" />
+        <EdgeLayout
+          Id="Package\Move from CSV to OLEDB table.Paths[Flat File Source Output]"
+          TopLeft="354,97">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="153.5,67"
+              Start="0,0"
+              End="153.5,59.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,29.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,29.5"
+                    Point2="0,33.5"
+                    Point3="4,33.5" />
+                  <mssgle:LineSegment
+                    End="149.5,33.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="149.5,33.5"
+                    Point2="153.5,33.5"
+                    Point3="153.5,37.5" />
+                  <mssgle:LineSegment
+                    End="153.5,59.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <TaskHost
+    design-time-name="Package\Move from OLEDB to Warehouse">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="177,42"
+          Id="Package\Move from OLEDB to Warehouse\OLE DB Destination"
+          TopLeft="477,217" />
+        <NodeLayout
+          Size="157,42"
+          Id="Package\Move from OLEDB to Warehouse\OLE DB Source"
+          TopLeft="299,51" />
+        <EdgeLayout
+          Id="Package\Move from OLEDB to Warehouse.Paths[OLE DB Source Output]"
+          TopLeft="377.5,93">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="188,124"
+              Start="0,0"
+              End="188,116.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,58" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,58"
+                    Point2="0,62"
+                    Point3="4,62" />
+                  <mssgle:LineSegment
+                    End="184,62" />
+                  <mssgle:CubicBezierSegment
+                    Point1="184,62"
+                    Point2="188,62"
+                    Point3="188,66" />
+                  <mssgle:LineSegment
+                    End="188,116.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Move from CSV to OLEDB table\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Move from OLEDB to Warehouse\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Move from OLEDB to Warehouse\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
