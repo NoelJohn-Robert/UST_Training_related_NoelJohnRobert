@@ -1,0 +1,29 @@
+OrderID,CustomerID,OrderDate,ProductName,Quantity,Price (₹),PaymentMethod
+1001,1,2021-06-15,Laptop,1,55000,Credit Card
+1002,2,2021-07-10,Smartphone,2,40000,Debit Card
+1003,1,2021-08-23,Tablet,1,25000,Net Banking
+1004,3,2021-09-05,Headphones,3,7500,Cash
+1005,5,2021-10-18,Smartwatch,1,15000,Credit Card
+1006,4,2021-11-30,Camera,1,35000,Debit Card
+1007,6,2021-12-12,Monitor,2,30000,Net Banking
+1008,7,2022-01-25,Keyboard,3,4500,Cash
+1009,8,2022-02-07,Mouse,4,3200,Credit Card
+1010,8,2022-03-19,Printer,1,12000,Debit Card
+1011,10,2022-04-01,Speaker,2,8000,Net Banking
+1012,11,2022-05-14,Webcam,1,5000,Cash
+1013,12,2022-06-26,Router,1,6000,Credit Card
+1014,13,2022-07-08,SSD,1,7000,Debit Card
+1015,14,2022-08-20,External Hard Drive,2,15000,Net Banking
+1016,15,2022-09-02,Microphone,1,4000,Cash
+1017,16,2022-10-15,Charger,3,3000,Credit Card
+1018,17,2023-01-02,Power Bank,2,2500,Debit Card
+1019,18,2023-01-09,USB Cable,5,1000,Net Banking
+1020,19,2023-01-22,Memory Card,4,2000,Cash
+1021,20,2023-02-04,Projector,1,45000,Credit Card
+1022,21,2023-03-18,Gaming Console,1,35000,Debit Card
+1023,22,2023-04-01,VR Headset,1,30000,Net Banking
+1024,23,2023-05-15,Smart Home Hub,1,10000,Cash
+1025,24,2023-06-27,Drone,1,50000,Credit Card
+1026,32,2023-06-27,SSD,1,8000,Debit Card
+1027,35,2023-06-27,Smartphone,2,40000,Debit Card
+1028,42,2023-06-27,Gaming Console,1,35000,Debit Card

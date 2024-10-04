@@ -1,0 +1,32 @@
+USE [SSIS]
+GO
+-- Create a Log Table
+IF NOT EXISTS(Select * from sys.objects WHERE object_id = 
+OBJECT_ID(N'[dbo].[audit_log_table]') AND type in (N'U'))
+CREATE table audit_log_table(Id int identity, PackageName varchar(200),TableName 
+varchar(200),RecordsInserted INT, RecordsUpdated INT, DATED Datetime);
+GO
+IF NOT EXISTS(Select * from sys.objecacts WHERE object_id = 
+OBJECT_ID(N'[dbo].[Inputtable]') AND type in (N'U'))
+CREATE TABLE [dbo].[Inputtable](
+	[id] [int] NULL,
+	[first_name] [varchar](50) NULL,
+	[last_name] [varchar](50) NULL,
+	[gender] [varchar](50) NULL,
+	[city] [varchar](50) NULL,
+	[country] [varchar](50) NULL
+) ON [PRIMARY]
+GO
+IF EXISTS(Select * from sys.objects WHERE object_id = 
+OBJECT_ID(N'[dbo].[Updatedtable]') AND type in (N'U'))
+DROP TABLE [dbo].[Updatedtable]
+GO
+CREATE TABLE [dbo].[Updatedtable](
+	[id] [int] NULL,
+	[first_name] [varchar](50) NULL,
+	[last_name] [varchar](50) NULL,
+	[gender] [varchar](50) NULL,
+	[city] [varchar](50) NULL,
+	[country] [varchar](50) NULL
+) ON [PRIMARY]
+GO

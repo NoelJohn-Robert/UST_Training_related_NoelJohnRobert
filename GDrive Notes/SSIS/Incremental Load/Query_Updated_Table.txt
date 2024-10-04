@@ -1,0 +1,13 @@
+declare @updated int
+
+UPDATE tbl1
+   SET tbl1.[first_name] = tbl2.first_name
+      ,tbl1.[last_name] = tbl2.last_name 
+      ,tbl1.[gender] = tbl2.gender 
+      ,tbl1.[email] = tbl2.email
+      ,tbl1.[country] = tbl2.country 
+   FROM [dbo].[Inputtable] tbl1 inner join [dbo].[Updatedtable] as tbl2
+   ON tbl1.id = tbl2.id
+SET @updated = @@ROWCOUNT
+INSERT INTO [dbo].[audit_log_table]
+SELECT 'IncrementalLoad.dtsx','Inputtable',0, @updated, getdate();
