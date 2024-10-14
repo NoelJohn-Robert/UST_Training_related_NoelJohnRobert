@@ -1,0 +1,65 @@
+About Capstone:
+python, dashboard, adf, spark, pyspark, sparksql
+
+(11 different types, dataset and flow will be similar for atleast 2 people - so ensure to make them different)
+
+1. Input data sources (multiple).
+-- if it is not splitted, (except cosmos) split into min 3 parts [like, URL, Datalake/blob, azureDB, mongoDB, postgres]
+
+2. DataPipeline (dataflow can be created here)
+
+3. Create and define landing zone (NoSQL database - cosmosDB)
+
+4. Transformations and Aggregations using PySpark notebook
+-- store cleaned data to table [delta table, SQL, cosmos - whatever is cheaper], 
+
+5. Materialized views (SQL) - createOrReplace....
+-- create SQL table (optional as we have materialized view)
+-- SQL for dashboard
+-- use optimization techniques here
+
+6. Visualization (PowerBI or Databricks) - 2nd notebook
+
+
+
+
+Dataflow can be added in step 2 especially for those with a single dataset.
+
+
+
+
+
+
+Data Details:
+1. food.csv
+-- index:
+-- f_id: food identifier
+-- item: food name
+-- veg_or_non_veg: veg or non veg
+
+2. menu.csv
+-- index:
+-- menu_id: 
+-- r_id: restautant identifier
+-- f_id: food identifier
+-- cuisine
+-- price
+
+3. orders.csv
+-- index
+-- order_date:
+-- sales_qty:
+-- sales_amount:
+-- currency:
+-- user_id: user who placed order
+-- r_id: restaurant which placed order
+
+4. restaurant.csv
+-- index:
+-- id: identifier of restaurant
+-- name
+-- city
+-- rating: average rating of restaurant
+-- rating_count (might drop this)
+
+5. users.csv
